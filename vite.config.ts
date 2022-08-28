@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import packageConfig from './package.json' assert { type: 'json' }
 
 export default defineConfig(({ mode }) => {
   const isProd = mode === 'prod'
@@ -82,6 +83,9 @@ export default defineConfig(({ mode }) => {
     optimizeDeps,
     build,
     test,
+    define: {
+      __VERSION__: JSON.stringify(packageConfig.version),
+    },
 
     /**
      * DESC:
