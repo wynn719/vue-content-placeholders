@@ -1,19 +1,24 @@
-import type { App } from 'vue'
-import ContentPlaceholders from './components/ContentPlaceholders.vue'
-import ContentPlaceholdersHeading from './components/ContentPlaceholdersHeading.vue'
-import ContentPlaceholdersImg from './components/ContentPlaceholdersImg.vue'
-import ContentPlaceholdersText from './components/ContentPlaceholdersText.vue'
+import type { Plugin } from 'vue-demi'
+import ContentPlaceholders from './components/ContentPlaceholders'
+import ContentPlaceholdersHeading from './components/ContentPlaceholdersHeading'
+import ContentPlaceholdersImg from './components/ContentPlaceholdersImg'
+import ContentPlaceholdersText from './components/ContentPlaceholdersText'
 
-export function install(Vue: App) {
-  Vue.component('ContentPlaceholders', ContentPlaceholders)
-  Vue.component('ContentPlaceholdersHeading', ContentPlaceholdersHeading)
-  Vue.component('ContentPlaceholdersImg', ContentPlaceholdersImg)
-  Vue.component('ContentPlaceholdersText', ContentPlaceholdersText)
-}
+let isInstalled = false
 
-const plugin = {
+const plugin: Plugin & { version: string } = {
   version: __VERSION__,
-  install,
+  install(Vue) {
+    if (isInstalled) {
+      console.warn('vue-content-placeholders is installed')
+      return
+    }
+    Vue.component('ContentPlaceholders', ContentPlaceholders)
+    Vue.component('ContentPlaceholdersHeading', ContentPlaceholdersHeading)
+    Vue.component('ContentPlaceholdersImg', ContentPlaceholdersImg)
+    Vue.component('ContentPlaceholdersText', ContentPlaceholdersText)
+    isInstalled = true
+  },
 }
 
 export default plugin

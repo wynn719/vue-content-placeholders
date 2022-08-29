@@ -1,5 +1,5 @@
 {
-  "name": "@wynn719/veu-content-placeholders",
+  "name": "@wynn719/vue-content-placeholders",
   "version": "0.0.1",
   "description": "Vue Components for rendering animated content placeholders like facebook",
   "keywords": [
@@ -28,6 +28,10 @@
     ".": {
       "import": "./dist/index.es.js",
       "require": "./dist/index.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "files": [
@@ -39,7 +43,8 @@
     "clean:dist": "rimraf dist",
     "clean:coverage": "rimraf coverage",
     "dev": "vite --mode dev",
-    "build": "pnpm clean:dist && vite build --mode prod && vue-tsc --emitDeclarationOnly",
+    "build": "pnpm clean:dist && vite build --mode prod && pnpm types",
+    "types": "vue-tsc --emitDeclarationOnly --outDir ./dist/types",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -64,13 +69,19 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.9",
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/runtime": "^7.18.9",
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
+    "@rollup/plugin-babel": "^5.3.1",
     "@types/node": "^17.0.21",
     "@vitejs/plugin-legacy": "^2.0.1",
     "@vitejs/plugin-vue": "^2.2.0",
+    "babel": "^6.23.0",
     "c8": "^7.11.0",
     "commitizen": "^4.2.4",
+    "core-js": "^3.25.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.11.0",
     "happy-dom": "^2.49.0",

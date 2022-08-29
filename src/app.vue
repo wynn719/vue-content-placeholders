@@ -1,14 +1,16 @@
 <template>
-  <div>
-    <content-placeholders>
-      <content-placeholders-heading :img="true" />
-      <content-placeholders-text :lines="3" />
-    </content-placeholders>
+  <div class="content">
+    <ContentPlaceholders>
+      <ContentPlaceholdersHeading :img="true" />
+      <ContentPlaceholdersText :lines="3" />
+    </ContentPlaceholders>
 
-    <content-placeholders :rounded="true">
-      <content-placeholders-img />
-      <content-placeholders-heading />
-    </content-placeholders>
+    <br>
+
+    <ContentPlaceholders :rounded="true">
+      <ContentPlaceholdersImg />
+      <ContentPlaceholdersHeading />
+    </ContentPlaceholders>
   </div>
 </template>
 
@@ -19,4 +21,12 @@ import {
   ContentPlaceholdersImg,
   ContentPlaceholdersText,
 } from './index'
+import './styles.scss'
 </script>
+
+<style lang="scss">
+.content {
+  width: 1100px;
+  margin: 0 auto;
+}
+</style>

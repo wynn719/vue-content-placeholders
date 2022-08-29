@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { babel } from '@rollup/plugin-babel'
 import packageConfig from './package.json' assert { type: 'json' }
 
 export default defineConfig(({ mode }) => {
@@ -38,11 +39,21 @@ export default defineConfig(({ mode }) => {
             'vue-demi': 'VueDemi',
           },
         },
+        plugins: [
+          babel({
+            presets: [[
+              '@babel/preset-env',
+            ]],
+            babelHelpers: 'bundled',
+          }),
+        ],
       },
     }
   }
 
-  let optimizeDeps = {}
+  let optimizeDeps = {
+    exclude: ['vue-demi'],
+  }
   if (isDev) {
     /**
      * DESC:
@@ -85,6 +96,7 @@ export default defineConfig(({ mode }) => {
     test,
     define: {
       __VERSION__: JSON.stringify(packageConfig.version),
+      __NAME__: JSON.stringify(packageConfig.name),
     },
 
     /**
@@ -97,6 +109,11 @@ export default defineConfig(({ mode }) => {
           find: '@',
           replacement: resolve(__dirname, './src'),
         },
+      ],
+      dedupe: [
+        'vue',
+        'vue-demi',
+        '@vue/runtime-core',
       ],
     },
   }
