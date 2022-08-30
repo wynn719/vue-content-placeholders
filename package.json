@@ -1,6 +1,6 @@
 {
   "name": "@wynn719/vue-content-placeholders",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "Vue Components for rendering animated content placeholders like facebook",
   "keywords": [
     "vue",
