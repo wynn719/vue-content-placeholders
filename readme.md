@@ -1,7 +1,8 @@
 # vue-content-placeholders
 
-![npm](https://img.shields.io/npm/v/vue-content-placeholders.svg)
+![npm (scoped)](https://img.shields.io/npm/v/@wynn719/vue-content-placeholders?style=flat-square)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+[![vue3](https://img.shields.io/badge/vue-3.x-brightgreen.svg)](https://vuejs.org/)
 
 > Vue addon for rendering fake content while data is fetching to provide better UX and lower bounce rate.
 
@@ -11,8 +12,9 @@
 
 ## :cd: Installation
 
-* via npm: `npm install vue-content-placeholders --save`
-* via yarn: `yarn add vue-content-placeholders`
+* via npm: `npm install @wynn719vue-content-placeholders --save`
+* via yarn: `yarn add @wynn719vue-content-placeholders`
+* via pnpm: `pnpm add @wynn719/vue-content-placeholders`
 
 ## :rocket: Usage
 
@@ -20,7 +22,8 @@ Include plugin in your `main.js` file.
 
 ```javascript
 import Vue from 'vue'
-import VueContentPlaceholders from 'vue-content-placeholders'
+import VueContentPlaceholders from '@wynn719/vue-content-placeholders'
+import '@wynn719/vue-content-placeholders/dist/style.css'
 
 Vue.use(VueContentPlaceholders)
 ```
@@ -36,16 +39,12 @@ Vue.use(VueContentPlaceholders)
 </content-placeholders>
 ```
 
-![rendered example](https://i.imgur.com/LWfqxUe.png)
-
 ```html
 <content-placeholders :rounded="true">
   <content-placeholders-img />
   <content-placeholders-heading />
 </content-placeholders>
 ```
-
-![rendered example](https://i.imgur.com/NBb6ZB7.png)
 
 ### Available components and properties
 

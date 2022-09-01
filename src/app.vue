@@ -26,7 +26,7 @@ import './styles.scss'
 
 <style lang="scss">
 .content {
-  width: 1100px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 </style>

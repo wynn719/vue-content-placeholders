@@ -11,8 +11,8 @@ export default defineComponent({
   setup(props) {
     const className = usePrefix('text')
     return () => {
-      const lines = [...Array(props.lines).keys()].map((n) => {
-        return h('div', { key: n, class: `${className}__line` })
+      const lines = Array.from({ length: props.lines }).map((_, idx) => {
+        return h('div', { key: idx, class: `${className}__line` })
       })
 
       return h('div', { class: className }, lines)
