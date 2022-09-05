@@ -1,0 +1,11 @@
+// Vitest Snapshot v1
+
+exports[`ContentPlaceholdersHeading > should render correctly 1`] = `
+"<div class=\\"vue-content-placeholders-heading\\">
+  <!---->
+  <div class=\\"vue-content-placeholders-heading__content\\">
+    <div class=\\"vue-content-placeholders-heading__title\\"></div>
+    <div class=\\"vue-content-placeholders-heading__subtitle\\"></div>
+  </div>
+</div>"
+`;

@@ -1,0 +1,3 @@
+// Vitest Snapshot v1
+
+exports[`ContentPlaceholders > should render correctly 1`] = `"<div class=\\"vue-content-placeholders vue-content-placeholders-is-animated\\">Default</div>"`;

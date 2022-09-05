@@ -1,0 +1,10 @@
+// Vitest Snapshot v1
+
+exports[`ContentPlaceholders > should render correctly 1`] = `
+"<div class=\\"vue-content-placeholders-text\\">
+  <div class=\\"vue-content-placeholders-text__line\\"></div>
+  <div class=\\"vue-content-placeholders-text__line\\"></div>
+  <div class=\\"vue-content-placeholders-text__line\\"></div>
+  <div class=\\"vue-content-placeholders-text__line\\"></div>
+</div>"
+`;
